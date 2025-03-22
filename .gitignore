@@ -1,0 +1,10 @@
+# Ignore Unity auto-generated files
+Library/
+Logs/
+Temp/
+obj/
+UserSettings/
+Packages/
+.vsconfig
+Assila.sln
+Packages/com.unity.*/
