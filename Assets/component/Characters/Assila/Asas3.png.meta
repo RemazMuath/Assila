@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 33288616b2c91eb4fad5288f65a82049
+guid: 7382b8f0178692044992f5fac805d987
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4532392641319503660
-    second: "\u0663_0"
+      213: 8801489033457613489
+    second: Asas3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0663_0"
+      name: Asas3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 130
-        height: 173
+        x: 882
+        y: 193
+        width: 1007
+        height: 1286
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c278178f71b46ee30800000000000000
-      internalID: 4532392641319503660
+      spriteID: 1babcb5c4ab252a70800000000000000
+      internalID: 8801489033457613489
       vertices: []
       indices: 
       edges: []
@@ -143,8 +143,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      "\u0663_0": 4532392641319503660
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
