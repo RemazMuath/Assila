@@ -1,10 +1,33 @@
-# Ignore Unity auto-generated files
+# Unity auto-generated files and folders
 Library/
 Logs/
 Temp/
-obj/
+Obj/
+Build/
+Builds/
 UserSettings/
-Packages/
+MemoryCaptures/
+
+# Unity asset pipeline
+*.csproj
+*.sln
+*.user
+*.unitypackage
+*.apk
+*.log
+*.dmp
+
+# IDE folders
+.vs/
+.vscode/
 .vsconfig
+
+# Unity packages
+Packages/
+Packages/com.unity.*
+
+# Project-specific
 Assila.sln
-Packages/com.unity.*/
+
+# OS-specific
+.DS_Store

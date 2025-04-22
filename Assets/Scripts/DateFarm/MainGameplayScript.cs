@@ -1,4 +1,4 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
@@ -22,14 +22,18 @@ public class MainGameplayScript : MonoBehaviour
     private float obstacleSpawnTimer = 0f;
     private float obstacleSpawnInterval = 2f;
     private float baseSpeed = 1f;
-    private float scrollSpeed;
-    private bool gameStarted = false;
+    [HideInInspector] public float scrollSpeed;
+    private float accelerationRate = 0.005f;
+    [HideInInspector] public bool gameStarted = false;
 
     void Start()
     {
         string difficulty = PlayerPrefs.GetString("Difficulty", "Easy");
-        Debug.Log("Difficulty selected: " + difficulty);
         SetDifficulty(difficulty);
+
+        // ‚ùå Hide Assila at start
+        if (player != null)
+            player.SetActive(false);
 
         StartCoroutine(ImageCountdown());
     }
@@ -39,15 +43,18 @@ public class MainGameplayScript : MonoBehaviour
         switch (difficulty)
         {
             case "Easy":
-                baseSpeed = 1f;
+                baseSpeed = 40f;
+                accelerationRate = 2.0f;
                 obstacleSpawnInterval = 2.5f;
                 break;
             case "Medium":
-                baseSpeed = 3f;
+                baseSpeed = 70f;
+                accelerationRate = 2.5f;
                 obstacleSpawnInterval = 1.8f;
                 break;
             case "Hard":
-                baseSpeed = 5f;
+                baseSpeed = 100f;
+                accelerationRate = 3.0f;
                 obstacleSpawnInterval = 1f;
                 break;
         }
@@ -57,27 +64,29 @@ public class MainGameplayScript : MonoBehaviour
 
     IEnumerator ImageCountdown()
     {
-        // Show 3
         countImage3.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         countImage3.gameObject.SetActive(false);
 
-        // Show 2
         countImage2.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         countImage2.gameObject.SetActive(false);
 
-        // Show 1
         countImage1.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         countImage1.gameObject.SetActive(false);
 
-        // Show "GO!" (Arabic)
         countTextGo.gameObject.SetActive(true);
-        countTextGo.text = ArabicFixer.Fix("≈‰ÿ·««««ﬁ !");
+        countTextGo.text = ArabicFixer.Fix("ÿ•ŸÜÿ∑ŸÑÿßÿßÿßÿßÿßÿßŸÇ");
+
+        // ‚úÖ Show Assila now
+        if (player != null)
+            player.SetActive(true);
+
         yield return new WaitForSeconds(1f);
         countTextGo.gameObject.SetActive(false);
 
+        // ‚úÖ Game officially starts now
         gameStarted = true;
     }
 
@@ -85,8 +94,7 @@ public class MainGameplayScript : MonoBehaviour
     {
         if (!gameStarted) return;
 
-        scrollSpeed += 0.005f * Time.deltaTime;
-        background.transform.Translate(Vector2.left * scrollSpeed * Time.deltaTime);
+        scrollSpeed += accelerationRate * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space))
             TryJump();
@@ -110,6 +118,9 @@ public class MainGameplayScript : MonoBehaviour
 
     void SpawnObstacle()
     {
+        if (obstaclePrefabs == null || obstaclePrefabs.Length == 0)
+            return;
+
         int index = Random.Range(0, obstaclePrefabs.Length);
         Instantiate(obstaclePrefabs[index], obstacleSpawnPoint.position, Quaternion.identity);
     }
