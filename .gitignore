@@ -22,9 +22,10 @@ MemoryCaptures/
 .vscode/
 .vsconfig
 
-# Unity packages
-Packages/
+# Ignore built packages, not manifest
 Packages/com.unity.*
+!Packages/manifest.json
+!Packages/packages-lock.json
 
 # Project-specific
 Assila.sln
