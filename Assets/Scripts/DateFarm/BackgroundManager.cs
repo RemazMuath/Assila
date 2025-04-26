@@ -4,8 +4,7 @@ using System.Collections.Generic;
 public class BackgroundManager : MonoBehaviour
 {
     public GameObject backgroundPrefab;
-    public int tileCount = 5; // 👈 Enough to loop!
-    public float scrollSpeed = 2f;
+    public int tileCount = 5;
 
     private List<GameObject> tiles = new List<GameObject>();
     private float bgWidth;
@@ -21,12 +20,18 @@ public class BackgroundManager : MonoBehaviour
             return;
         }
 
-        bgWidth = backgroundPrefab.GetComponent<SpriteRenderer>().bounds.size.x;
+        // 🔧 Create a temp background just to calculate correct size
+        GameObject tempBG = Instantiate(backgroundPrefab);
+        AutoFitToCamera(tempBG); // 🧠 Scale the temp to match screen size
+        bgWidth = tempBG.GetComponent<SpriteRenderer>().bounds.size.x;
+        Destroy(tempBG);
 
+        // 🧱 Spawn actual background tiles
         for (int i = 0; i < tileCount; i++)
         {
             Vector3 spawnPos = new Vector3(i * bgWidth, 0, 0);
             GameObject tile = Instantiate(backgroundPrefab, spawnPos, Quaternion.identity);
+            AutoFitToCamera(tile); // Ensure each one scales to screen
             tile.transform.SetParent(transform);
             tiles.Add(tile);
         }
@@ -38,7 +43,7 @@ public class BackgroundManager : MonoBehaviour
 
         foreach (GameObject tile in tiles)
         {
-            tile.transform.Translate(Vector2.left * scrollSpeed * Time.deltaTime);
+            tile.transform.Translate(Vector2.left * gameManager.scrollSpeed * Time.deltaTime);
         }
 
         GameObject first = tiles[0];
@@ -49,5 +54,22 @@ public class BackgroundManager : MonoBehaviour
             tiles.RemoveAt(0);
             tiles.Add(first);
         }
+    }
+
+    // 🧠 Fit any background sprite to camera view horizontally
+    void AutoFitToCamera(GameObject tile)
+    {
+        SpriteRenderer sr = tile.GetComponent<SpriteRenderer>();
+        if (sr == null) return;
+
+        float camHeight = Camera.main.orthographicSize * 2f;
+        float camWidth = camHeight * Camera.main.aspect;
+
+        Vector2 spriteSize = sr.sprite.bounds.size;
+        tile.transform.localScale = new Vector3(
+            camWidth / spriteSize.x,
+            camHeight / spriteSize.y,
+            1f
+        );
     }
 }

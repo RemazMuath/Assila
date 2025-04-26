@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: d3ec6e18c2830af45b508100b2357df7
+guid: 176f60a6a5afae8479595dea6a41903c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1124376763332561292
-    second: GOO_0
-  - first:
-      213: 3898075356175724963
-    second: GOO_1
-  - first:
-      213: -5949444775124312303
-    second: GOO_2
-  - first:
-      213: -6362818296526007473
-    second: GOO_3
-  - first:
-      213: -9029835183922376466
-    second: GOO_4
+      213: 300040418721006742
+    second: S_Block_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,9 +48,9 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -125,106 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GOO_0
+      name: S_Block_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 673
-        width: 386
-        height: 1698
+        x: 670
+        y: 1250
+        width: 818
+        height: 291
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c89042485b69a9f00800000000000000
-      internalID: 1124376763332561292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GOO_1
-      rect:
-        serializedVersion: 2
-        x: 870
-        y: 0
-        width: 9715
-        height: 2529
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a1fe8032eeb81630800000000000000
-      internalID: 3898075356175724963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GOO_2
-      rect:
-        serializedVersion: 2
-        x: 8073
-        y: 1489
-        width: 388
-        height: 1454
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 11f59ef9f735f6da0800000000000000
-      internalID: -5949444775124312303
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GOO_3
-      rect:
-        serializedVersion: 2
-        x: 10870
-        y: 324
-        width: 403
-        height: 1949
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f431631987ab2b7a0800000000000000
-      internalID: -6362818296526007473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GOO_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 378
-        height: 394
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee09bf90eb49fa280800000000000000
-      internalID: -9029835183922376466
+      spriteID: 6940020db25f92400800000000000000
+      internalID: 300040418721006742
       vertices: []
       indices: 
       edges: []
@@ -233,18 +137,14 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GOO_0: 1124376763332561292
-      GOO_1: 3898075356175724963
-      GOO_2: -5949444775124312303
-      GOO_3: -6362818296526007473
-      GOO_4: -9029835183922376466
+      S_Block_0: 300040418721006742
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

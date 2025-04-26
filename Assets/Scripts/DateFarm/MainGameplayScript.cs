@@ -13,7 +13,7 @@ public class MainGameplayScript : MonoBehaviour
     public Image countImage3;
     public Image countImage2;
     public Image countImage1;
-    public TextMeshProUGUI countTextGo;
+    public Image countImage_GO;
 
     public GameObject[] obstaclePrefabs;
     public Transform obstacleSpawnPoint;
@@ -31,9 +31,17 @@ public class MainGameplayScript : MonoBehaviour
         string difficulty = PlayerPrefs.GetString("Difficulty", "Easy");
         SetDifficulty(difficulty);
 
-        // ❌ Hide Assila at start
         if (player != null)
-            player.SetActive(false);
+        {
+            Animator animator = player.GetComponent<Animator>();
+            if (animator != null)
+                animator.Play("Idle"); // Assila stands still
+
+            player.SetActive(true);
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.bodyType = RigidbodyType2D.Static; // Freeze movement during countdown
+        }
 
         StartCoroutine(ImageCountdown());
     }
@@ -43,19 +51,19 @@ public class MainGameplayScript : MonoBehaviour
         switch (difficulty)
         {
             case "Easy":
-                baseSpeed = 40f;
-                accelerationRate = 2.0f;
+                baseSpeed = 10f;
+                accelerationRate = 0.5f;
                 obstacleSpawnInterval = 2.5f;
                 break;
             case "Medium":
-                baseSpeed = 70f;
-                accelerationRate = 2.5f;
+                baseSpeed = 18f;
+                accelerationRate = 1.0f;
                 obstacleSpawnInterval = 1.8f;
                 break;
             case "Hard":
-                baseSpeed = 100f;
-                accelerationRate = 3.0f;
-                obstacleSpawnInterval = 1f;
+                baseSpeed = 25f;
+                accelerationRate = 1.5f;
+                obstacleSpawnInterval = 1.2f;
                 break;
         }
 
@@ -76,17 +84,21 @@ public class MainGameplayScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         countImage1.gameObject.SetActive(false);
 
-        countTextGo.gameObject.SetActive(true);
-        countTextGo.text = ArabicFixer.Fix("إنطلااااااق");
-
-        // ✅ Show Assila now
-        if (player != null)
-            player.SetActive(true);
-
+        countImage_GO.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
-        countTextGo.gameObject.SetActive(false);
+        countImage_GO.gameObject.SetActive(false);
 
-        // ✅ Game officially starts now
+        if (player != null)
+        {
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.bodyType = RigidbodyType2D.Dynamic; // Unfreeze
+
+            Animator anim = player.GetComponent<Animator>();
+            if (anim != null)
+                anim.SetTrigger("Run"); // Switch to running animation
+        }
+
         gameStarted = true;
     }
 
@@ -94,7 +106,7 @@ public class MainGameplayScript : MonoBehaviour
     {
         if (!gameStarted) return;
 
-        scrollSpeed += accelerationRate * Time.deltaTime;
+        scrollSpeed = Mathf.Min(scrollSpeed + accelerationRate * Time.deltaTime, 60f);
 
         if (Input.GetKeyDown(KeyCode.Space))
             TryJump();
@@ -109,11 +121,21 @@ public class MainGameplayScript : MonoBehaviour
 
     void TryJump()
     {
-        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-        if (rb != null && Mathf.Abs(rb.velocity.y) < 0.01f)
+        if (CanJump())
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0f); // Reset vertical speed before jumping
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
+    }
+
+    bool CanJump()
+    {
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        return rb != null && Mathf.Abs(rb.velocity.y) < 0.01f;
     }
 
     void SpawnObstacle()

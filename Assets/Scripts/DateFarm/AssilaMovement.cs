@@ -1,37 +1,81 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AssilaMovement : MonoBehaviour
 {
-    public float jumpForce = 12f;
-    private Rigidbody2D rb;
-    private bool isGrounded;
+    [Header("Jump Physics")]
+    public float baseJumpForce = 23f;
+    public float maxJumpForce = 30f;
+    public int maxJumps = 2;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [Header("Platform Sync")]
+    public float minJumpDistance = 3f;
+    public float maxJumpDistance = 7f;
+
+    private Rigidbody2D rb;
+    private int jumpCount;
+    private float lastPlatformX;
+
+    void Start() => rb = GetComponent<Rigidbody2D>();
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            rb.velocity = Vector2.up * jumpForce;
+            TryJump();
         }
+
+        if (transform.position.y < -10f) GameOver();
+    }
+
+    private void TryJump()
+    {
+        if (jumpCount >= maxJumps) return;
+
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+        rb.AddForce(Vector2.up * baseJumpForce, ForceMode2D.Impulse);
+        jumpCount++;
+    }
+
+
+    private float GetNextPlatformDistance()
+    {
+        // Raycast to find next platform
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position + Vector3.right * 2f,
+            Vector2.right,
+            maxJumpDistance * 1.5f,
+            LayerMask.GetMask("Platform")
+        );
+
+        return hit.collider != null ? hit.distance : minJumpDistance;
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Platform"))
+        rb.velocity = new Vector2(rb.velocity.x, 0f);
+
+        if (!col.gameObject.CompareTag("Platform1")) return;
+
+        ContactPoint2D contact = col.contacts[0];
+        if (contact.normal.y > 0.5f)
         {
-            isGrounded = true;
+            jumpCount = 0;
+            lastPlatformX = col.transform.position.x;
         }
+        else GameOver();
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    private void GameOver()
     {
-        if (col.gameObject.CompareTag("Platform"))
-        {
-            isGrounded = false;
-        }
+        Debug.Log("Game Over!");
+        Time.timeScale = 0f;
+    }
+}
+
+public static class ExtensionMethods
+{
+    public static float Remap(this float value, float from1, float to1, float from2, float to2)
+    {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
 }

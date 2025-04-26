@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 33288616b2c91eb4fad5288f65a82049
+guid: 7c8784008fd51884ba4c03f4d645da4c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4532392641319503660
-    second: "\u0663_0"
+      213: 1886451727227295260
+    second: M_Block_0
+  - first:
+      213: -6080261063098394844
+    second: M_Block_1
+  - first:
+      213: 6892008466451793202
+    second: M_Block_2
+  - first:
+      213: -5593164590621938005
+    second: M_Block_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,9 +55,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,7 +109,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -113,22 +122,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0663_0"
+      name: M_Block_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 130
-        height: 173
+        x: 332
+        y: 1412
+        width: 1150
+        height: 293
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c278178f71b46ee30800000000000000
-      internalID: 4532392641319503660
+      spriteID: c161e4fd9d50e2a10800000000000000
+      internalID: 1886451727227295260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_Block_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1655
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427916817c29e9ba0800000000000000
+      internalID: -6080261063098394844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_Block_2
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1566
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23508df4f2555af50800000000000000
+      internalID: 6892008466451793202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_Block_3
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1411
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baeafad40761162b0800000000000000
+      internalID: -5593164590621938005
       vertices: []
       indices: 
       edges: []
@@ -136,15 +208,18 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      "\u0663_0": 4532392641319503660
+      M_Block_0: 1886451727227295260
+      M_Block_1: -6080261063098394844
+      M_Block_2: 6892008466451793202
+      M_Block_3: -5593164590621938005
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
