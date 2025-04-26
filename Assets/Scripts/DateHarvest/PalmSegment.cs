@@ -1,18 +1,23 @@
 using UnityEngine;
 
-public class PalmSegment : MonoBehaviour
+public class PalmSegment : MonoBehaviour, IPoolable
 {
     public bool hasObstacle = false;
     public GameObject obstaclePrefab;
+    private GameObject currentObstacle;
 
-    void Start()
+    public void OnReposition()
     {
-        // Optionally spawn an obstacle on this segment
+        hasObstacle = Random.value < 0.4f;
+
+        if (currentObstacle != null)
+            Destroy(currentObstacle);
+
         if (hasObstacle && obstaclePrefab != null)
         {
-            float xOffset = Random.Range(-3f, 3f); // adjust based on your tree width
+            float xOffset = Random.Range(-3f, 3f);
             Vector3 spawnPos = transform.position + new Vector3(xOffset, 0.5f, 0);
-            Instantiate(obstaclePrefab, spawnPos, Quaternion.identity, transform);
+            currentObstacle = Instantiate(obstaclePrefab, spawnPos, Quaternion.identity, transform);
         }
     }
 }

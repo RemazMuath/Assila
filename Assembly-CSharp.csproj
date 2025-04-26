@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\DateFarm\DifficultySelectorDF.cs" />
     <Compile Include="Assets\Scripts\DateFarm\AssilaMovement.cs" />
     <Compile Include="Assets\Scripts\DateHarvest\GameManager.cs" />
+    <Compile Include="Assets\Scripts\DateHarvest\IPoolable.cs" />
     <Compile Include="Assets\Scripts\DateFarm\MainGameplayScript.cs" />
     <Compile Include="Assets\Scripts\DateHarvest\CameraShaker.cs" />
     <Compile Include="Assets\Scripts\DateHarvest\PoolManager.cs" />
