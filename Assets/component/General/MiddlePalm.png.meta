@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MiddlePalm_0: -7672105706159132357
+      MiddlePalm_1: -8633010356664816398
+      MiddlePalm_2: -4926571598262816883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
