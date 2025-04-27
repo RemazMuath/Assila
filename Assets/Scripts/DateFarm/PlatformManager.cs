@@ -53,36 +53,6 @@ public class PlatformManager : MonoBehaviour
             SpawnPlatform();
     }
 
-    //void Update()
-    //{
-    //    if (!gameStarted || game == null) return;
-
-    //    scrollSpeed = game.scrollSpeed;
-
-    //    // Handle StartBlock moving and destroying
-    //    MoveStartBlock();
-
-
-    //    foreach (var platform in platformPool)
-    //    {
-    //        if (platform.activeInHierarchy)
-    //        {
-    //            platform.transform.Translate(Vector2.left * scrollSpeed * Time.deltaTime);
-
-    //            if (platform.transform.position.x < DeactivateThresholdX)
-    //            {
-    //                platform.SetActive(false);
-    //            }
-    //        }
-    //    }
-
-
-    //    // 👉 Keep filling the space ahead of player!
-    //    while (nextSpawnX < Camera.main.transform.position.x + SpawnAheadDistance)
-    //    {
-    //        SpawnPlatform();
-    //    }
-    //}
     private void MoveStartBlock()
     {
         if (startBlockInstance == null) return;
