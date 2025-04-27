@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Market_8_Boxes__0: 1057383415657454400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
