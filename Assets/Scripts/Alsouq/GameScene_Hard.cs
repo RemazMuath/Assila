@@ -1,36 +1,60 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameScene_Hard : MonoBehaviour
 {
     [Header("Date Display")]
-    public List<Image> slots;           // Assign 8 slots (Slot1 to Slot8)
-    public List<Sprite> dateSprites;    // Assign all 23 date photos here
+    public List<Image> slots;
+    public List<Sprite> dateSprites;
 
     [Header("Speech Bubble")]
-    public Image askedNameImage;        // Image inside bubble to show the asked Arabic name
-    public List<Sprite> labelSprites;   // 23 Arabic label photos (must match dateSprites order)
+    public List<Sprite> labelSprites;
+
+    [Header("Man Spawning")]
+    public GameObject walkingManPrefab;
+    public Transform manParent;
+
+    [Header("UI")]
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI scoreText;
 
     private List<int> selectedIndices = new List<int>();
-    private int currentAskedIndex; // To know which date he asked for
+    private int currentAskedIndex;
+    private int nextAskedIndex;
 
-    // New Variables
     private int totalScore = 0;
     private int correctAnswers = 0;
     private int totalCustomers = 0;
     private float timeSinceCustomerAsked = 0f;
 
+    private float countdownTime = 60f;
+    private bool gameOver = false;
+    private bool canClick = false;
+
     void Start()
     {
         LoadSelectedDates();
         ShowDates();
-        StartCustomerRequest(); // Start first customer
+        SpawnNewCustomer();
     }
 
     void Update()
     {
-        timeSinceCustomerAsked += Time.deltaTime;
+        if (!gameOver)
+        {
+            countdownTime -= Time.deltaTime;
+
+            if (countdownTime <= 0f)
+            {
+                countdownTime = 0f;
+                EndGame();
+            }
+
+            UpdateUI();
+        }
     }
 
     void LoadSelectedDates()
@@ -46,9 +70,7 @@ public class GameScene_Hard : MonoBehaviour
         foreach (string s in parts)
         {
             if (int.TryParse(s, out int index))
-            {
                 selectedIndices.Add(index);
-            }
         }
     }
 
@@ -61,66 +83,95 @@ public class GameScene_Hard : MonoBehaviour
         }
     }
 
-    public void StartCustomerRequest()
+    public void PrepareNextQuestion()
     {
-        Debug.Log("Customer arrived! Ready to ask for a date...");
-
         int randomPick = Random.Range(0, selectedIndices.Count);
-        currentAskedIndex = selectedIndices[randomPick];
+        nextAskedIndex = randomPick;
+    }
 
-        askedNameImage.sprite = labelSprites[currentAskedIndex];
-        askedNameImage.preserveAspect = true;
+    public Sprite GetAskedNameSprite()
+    {
+        return labelSprites[selectedIndices[nextAskedIndex]];
+    }
 
-        timeSinceCustomerAsked = 0f; // Reset the reaction time
+    public void ConfirmAskedName()
+    {
+        currentAskedIndex = selectedIndices[nextAskedIndex];
+        timeSinceCustomerAsked = 0f;
+        canClick = true;
     }
 
     public void OnDateClicked(int slotIndex)
     {
+        if (gameOver || !canClick)
+            return;
+
         int clickedDateIndex = selectedIndices[slotIndex];
 
         if (clickedDateIndex == currentAskedIndex)
         {
-            // Correct click
             Debug.Log("Correct Answer!");
-
             correctAnswers++;
-
-            if (timeSinceCustomerAsked <= 3f)
-                totalScore += 10;
-            else if (timeSinceCustomerAsked <= 5f)
-                totalScore += 5;
-            else if (timeSinceCustomerAsked <= 10f)
-                totalScore += 1;
+            totalScore += 10; // ✅ +10 points for correct
         }
         else
         {
-            // Wrong click
             Debug.Log("Wrong Answer!");
-            totalScore -= 5;
+            totalScore -= 10; // ✅ -10 points for wrong
+            if (totalScore < 0)
+                totalScore = 0; // Never below 0
         }
 
-        // After any click, move to next customer
-        NextCustomer();
-    }
+        canClick = false;
 
-    public void NextCustomer()
-    {
-        totalCustomers++;
-
-        // You can add "man walks away" animation here if you want later
-
-        StartCustomerRequest();
+        WalkingMan man = FindObjectOfType<WalkingMan>();
+        if (man != null)
+            man.StartWalkingOut();
     }
 
     public void SpawnNewCustomer()
     {
-        Debug.Log("Spawning new customer...");
-
-        // You can later instantiate a new man prefab here
-        // Example (if you have a prefab set up):
-        // Instantiate(manPrefab, startingPosition, Quaternion.identity);
-
-        // For now, you can just print for testing
+        if (!gameOver && walkingManPrefab != null)
+            StartCoroutine(SpawnManAfterDelay(0.1f));
     }
 
+    private IEnumerator SpawnManAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (!gameOver)
+        {
+            GameObject newMan = Instantiate(walkingManPrefab, manParent);
+            RectTransform manRect = newMan.GetComponent<RectTransform>();
+
+            if (manRect != null)
+                manRect.anchoredPosition = new Vector2(2500f, 0f);
+
+            PrepareNextQuestion();
+        }
+    }
+
+    private void UpdateUI()
+    {
+        if (timerText != null)
+        {
+            int minutes = Mathf.FloorToInt(countdownTime / 60f);
+            int seconds = Mathf.FloorToInt(countdownTime % 60f);
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+        if (scoreText != null)
+            scoreText.text = totalScore.ToString();
+    }
+
+    private void EndGame()
+    {
+        Debug.Log("Game Over!");
+        gameOver = true;
+
+        if (totalScore >= 70)
+            Debug.Log("🎉 YOU WIN!");
+        else
+            Debug.Log("😢 YOU LOSE!");
+    }
 }
