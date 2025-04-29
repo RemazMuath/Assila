@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour, IPoolable
 
     public void OnReposition()
     {
-        active = true; // Mark obstacle active when repositioned
+        active = true;
     }
 
     private void OnEnable()
@@ -16,23 +16,26 @@ public class Obstacle : MonoBehaviour, IPoolable
 
     private void Update()
     {
+        // Original pool return logic
         if (Camera.main != null && transform.position.y < Camera.main.transform.position.y - 10f)
         {
             PoolManager.Instance.ReturnToPool("Obstacle", gameObject);
-            active = false; // Disable collision logic when off screen
+            active = false;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!active) return; // Ignore if obstacle was already deactivated
+        Debug.Log($"Triggered by: {collision.name} with tag {collision.tag}", collision.gameObject);
 
-        if (collision.CompareTag("Player"))
-        {
-            CameraShaker.Instance?.Shake();
-            GameManager.Instance?.ApplyTimePenalty();
-            PoolManager.Instance.ReturnToPool("Obstacle", gameObject);
-            active = false;
-        }
+        if (!active || !collision.CompareTag("Player")) return;
+
+        CameraShaker.Instance?.Shake();
+        GameManager.Instance?.ApplyTimePenalty();
+        collision.GetComponent<PlayerController>()?.ForceFlipFromObstacle();
+
+        PoolManager.Instance.ReturnToPool("Obstacle", gameObject);
+        active = false;
     }
+
 }
