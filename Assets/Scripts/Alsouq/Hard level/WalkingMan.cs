@@ -51,7 +51,7 @@ public class WalkingMan : MonoBehaviour
             askedNameObject.SetActive(false);
         }
 
-        // Detect which GameScene we are in
+        // Detect level
         if (FindObjectOfType<GameScene_Easy>() != null)
         {
             manager = FindObjectOfType<GameScene_Easy>();
@@ -75,7 +75,6 @@ public class WalkingMan : MonoBehaviour
         {
             timer += Time.deltaTime;
             float t = Mathf.Clamp01(timer / travelTime);
-
             Vector2 walkPos = Vector2.Lerp(startPosition, targetPosition, t);
             walkPos.y += Mathf.Sin(Time.time * bobFrequency) * bobAmplitude;
             rectTransform.anchoredPosition = walkPos;
@@ -94,14 +93,13 @@ public class WalkingMan : MonoBehaviour
                 if (askedNameObject != null)
                     askedNameObject.SetActive(true);
 
-                SetAskedNameImage(); // ✅ New clean function
+                SetAskedNameImage();
             }
         }
         else if (walkingOut)
         {
             timer += Time.deltaTime;
             float t = Mathf.Clamp01(timer / travelTime);
-
             Vector2 walkOutPos = Vector2.Lerp(targetPosition, exitPosition, t);
             walkOutPos.y += Mathf.Sin(Time.time * bobFrequency) * bobAmplitude;
             rectTransform.anchoredPosition = walkOutPos;
@@ -109,7 +107,10 @@ public class WalkingMan : MonoBehaviour
             if (t >= 1f)
             {
                 walkingOut = false;
-                SpawnNewCustomer();
+
+                if (!IsGameOver()) // ✅ Prevent spawning after end
+                    SpawnNewCustomer();
+
                 Destroy(gameObject);
             }
         }
@@ -151,6 +152,20 @@ public class WalkingMan : MonoBehaviour
             (manager as GameScene_Medium).SpawnNewCustomer();
         else if (currentLevel == LevelType.Hard)
             (manager as GameScene_Hard).SpawnNewCustomer();
+    }
+
+    private bool IsGameOver() // ✅ Add this check for smoother scene switching
+    {
+        if (manager == null) return true;
+
+        if (currentLevel == LevelType.Easy)
+            return (manager as GameScene_Easy).IsGameOver();
+        else if (currentLevel == LevelType.Medium)
+            return (manager as GameScene_Medium).IsGameOver();
+        else if (currentLevel == LevelType.Hard)
+            return (manager as GameScene_Hard).IsGameOver();
+
+        return true;
     }
 
     public void StartWalkingOut()
