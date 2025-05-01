@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Platform1
+  - PalmSegment
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 'Platform '
+  - 
   - Water
   - UI
   - 

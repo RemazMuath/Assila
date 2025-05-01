@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
-
 
 public class AssilaMovement : MonoBehaviour
 {
@@ -67,50 +65,30 @@ public class AssilaMovement : MonoBehaviour
         }
         else GameOver();
     }
-    public void GameOver()
+
+    void GameOver()
     {
+        Debug.Log("Game Over!");
+        Time.timeScale = 0f;
+
+        // Save LastTime before reloading
         var timer = FindObjectOfType<GameTimerDF>();
         if (timer != null)
         {
-            timer.StopTimer();
-            float finalTime = timer.GetCurrentTime();
-
-            // Get current difficulty first
-            string difficulty = PlayerPrefs.GetString("Difficulty", "Easy");
-
-            // Save times separately for each difficulty
-            PlayerPrefs.SetFloat("LastTime_" + difficulty, finalTime);
-
-            float bestTime = PlayerPrefs.GetFloat("BestTime_" + difficulty, 0f);
-            if (finalTime > bestTime)
-            {
-                PlayerPrefs.SetFloat("BestTime_" + difficulty, finalTime);
-                PlayerPrefs.Save();
-                StartCoroutine(LoadSceneDelayed("WinSceneDF"));
-                return;
-            }
-
-            // Save even if it's not a new best
-            PlayerPrefs.Save();
+            PlayerPrefs.SetFloat("LastTime", timer.GetCurrentTime());
+            timer.StopTimer(); // Stop the timer
         }
-
-        StartCoroutine(LoadSceneDelayed("FailSceneDF"));
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("WinSceneDF"); 
     }
 
-
-    private IEnumerator LoadSceneDelayed(string sceneName)
-    {
-        yield return new WaitForSecondsRealtime(0.2f); // Give Unity time to finish saving
-        Debug.Log("Loading scene: " + sceneName);
-        SceneManager.LoadScene(sceneName);
-    }
 
 }
 
 public static class ExtensionMethods
+{
+    public static float Remap(this float value, float from1, float to1, float from2, float to2)
     {
-        public static float Remap(this float value, float from1, float to1, float from2, float to2)
-        {
-            return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
-        }
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
+}

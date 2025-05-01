@@ -1,13 +1,41 @@
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MonoBehaviour, IPoolable
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private bool active = false;
+
+    public void OnReposition()
     {
-        if (collision.CompareTag("Player"))
+        active = true;
+    }
+
+    private void OnEnable()
+    {
+        active = true;
+    }
+
+    private void Update()
+    {
+        // Original pool return logic
+        if (Camera.main != null && transform.position.y < Camera.main.transform.position.y - 10f)
         {
-            GameManager.Instance.ApplyTimePenalty();
-            CameraShaker.Instance.Shake();
+            PoolManager.Instance.ReturnToPool("Obstacle", gameObject);
+            active = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log($"Triggered by: {collision.name} with tag {collision.tag}", collision.gameObject);
+
+        if (!active || !collision.CompareTag("Player")) return;
+
+        CameraShaker.Instance?.Shake();
+        GameManager.Instance?.ApplyTimePenalty();
+        collision.GetComponent<PlayerController>()?.ForceFlipFromObstacle();
+
+        PoolManager.Instance.ReturnToPool("Obstacle", gameObject);
+        active = false;
+    }
+
 }

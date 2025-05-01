@@ -1,12 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using TMPro;
-using System.Linq;
-using ArabicSupport;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-
+using System.Linq;
 
 public class PlatformManager : MonoBehaviour
 {
@@ -17,7 +11,6 @@ public class PlatformManager : MonoBehaviour
     public float maxSpacing = 7f;
     public float heightChangeThreshold = 10f;
 
-   [SerializeField] private Transform player;
 
     private Queue<GameObject> platformPool = new Queue<GameObject>();
     private float nextSpawnX = 0f;
@@ -117,7 +110,7 @@ public class PlatformManager : MonoBehaviour
 
         // Keep filling the space ahead of player with buffer
         float spawnBuffer = Mathf.Max(SpawnAheadDistance, Camera.main.orthographicSize * 2f);
-        while (nextSpawnX < player.position.x + spawnBuffer)
+        while (nextSpawnX < Camera.main.transform.position.x + spawnBuffer)
         {
             SpawnPlatform();
         }
@@ -125,8 +118,6 @@ public class PlatformManager : MonoBehaviour
 
     void SpawnPlatform()
     {
-        Debug.Log("Spawning platform...");
-
         var platform = GetInactivePlatform();
         if (platform == null)
         {
@@ -166,16 +157,13 @@ public class PlatformManager : MonoBehaviour
                 return platform;
         }
 
-        // If none are available, create a new one dynamically
-        var newPlatform = Instantiate(platformPrefabs[UnityEngine.Random.Range(0, platformPrefabs.Length)]);
+        // 🛠 If none found, CREATE a new one dynamically
+        var newPlatform = Instantiate(platformPrefabs[Random.Range(0, platformPrefabs.Length)]);
         newPlatform.SetActive(false);
         newPlatform.tag = "Platform1";
-        platformPool.Enqueue(newPlatform); // add to the pool
-        Debug.LogWarning("Platform pool expanded dynamically.");
+        platformPool.Enqueue(newPlatform); // Add it to the pool for future use
         return newPlatform;
     }
-
-
 
     float ChooseHeight()
     {

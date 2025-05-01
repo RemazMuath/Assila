@@ -2,45 +2,69 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float climbSpeed = 2f;           // Upward climb speed
-    public float leftXPosition = -1.42f;    // X position when on left
-    public float rightXPosition = 0.9f;     // X position when on right
+    private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
+    private bool isMovingRight = false;
 
-    private bool isOnLeft = true;           // Start on the left side
+    [Header("Movement Settings")]
+    public float upwardMoveSpeed = 2f;
+    public float leftXPosition = -1.42f; // Exact left position (original value)
+    public float rightXPosition = 0.9f;  // Exact right position (original value)
 
-    void Start()
+    void Awake()
     {
-        // Start on left
-        SnapToSide(isOnLeft);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // Move upward automatically
-        transform.position += Vector3.up * climbSpeed * Time.deltaTime;
+        // Auto upward movement
+        transform.Translate(Vector2.up * upwardMoveSpeed * Time.deltaTime);
 
-        // Handle input for switching sides
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        // Keyboard input
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveLeft();
+        if (Input.GetKeyDown(KeyCode.RightArrow)) MoveRight();
+    }
+
+    public void MoveLeft()
+    {
+        if (isMovingRight)
         {
-            isOnLeft = true;
-            SnapToSide(isOnLeft);
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            isOnLeft = false;
-            SnapToSide(isOnLeft);
+            isMovingRight = false;
+            spriteRenderer.flipX = false;
+            SnapToPosition(leftXPosition); // Force exact left position
         }
     }
 
-    void SnapToSide(bool left)
+    public void MoveRight()
     {
-        // Set position X
-        float targetX = left ? leftXPosition : rightXPosition;
-        transform.position = new Vector3(targetX, transform.position.y, 0f);
+        if (!isMovingRight)
+        {
+            isMovingRight = true;
+            spriteRenderer.flipX = true;
+            SnapToPosition(rightXPosition); // Force exact right position
+        }
+    }
 
-        // Flip sprite by scaling X
-        Vector3 scale = transform.localScale;
-        scale.x = left ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-        transform.localScale = scale;
+    private void SnapToPosition(float xPos)
+    {
+        // Instant position update (bypass physics)
+        transform.position = new Vector3(xPos, transform.position.y, 0);
+    }
+
+    public void ForceFlipFromObstacle()
+    {
+        // Debug to verify it's being called
+        Debug.Log("Obstacle triggered flip!");
+
+        if (isMovingRight)
+        {
+            MoveLeft(); // Uses the same position snapping
+        }
+        else
+        {
+            MoveRight(); // Uses the same position snapping
+        }
     }
 }
