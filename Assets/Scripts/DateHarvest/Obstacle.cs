@@ -30,7 +30,7 @@ public class Obstacle : MonoBehaviour, IPoolable
 
         if (!active || !collision.CompareTag("Player")) return;
 
-        GameManager.Instance?.ShakeCamera();
+        CameraShaker.Instance?.Shake();
         GameManager.Instance?.ApplyTimePenalty();
         collision.GetComponent<PlayerController>()?.ForceFlipFromObstacle();
 
