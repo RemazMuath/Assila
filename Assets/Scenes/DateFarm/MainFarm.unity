@@ -376,7 +376,7 @@ MonoBehaviour:
   - {fileID: 7934215183150758242, guid: 15e0b272b0c0644429caa2cb3105f83a, type: 3}
   - {fileID: 1549676886506216705, guid: 73e3c34a9af4f8b4e95371be92b29d4e, type: 3}
   - {fileID: 7755525345847152331, guid: 9970b0a15850301468e3e5aade994b5a, type: 3}
-  poolSize: 10
+  poolSize: 100
   spawnY: -2.5
   minSpacing: 4
   maxSpacing: 6
