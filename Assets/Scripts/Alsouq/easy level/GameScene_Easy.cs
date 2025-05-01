@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameScene_Easy : MonoBehaviour // 🆕 CHANGE class name
 {
@@ -169,9 +170,35 @@ public class GameScene_Easy : MonoBehaviour // 🆕 CHANGE class name
         Debug.Log("Game Over!");
         gameOver = true;
 
-        if (totalScore >= 30) // 🛠️ 🆕 EASY win condition: 30 points
-            Debug.Log("🎉 YOU WIN (Easy Mode)!");
+        // Save last score and level
+        PlayerPrefs.SetInt("LastScore", totalScore);
+        PlayerPrefs.SetString("LastPlayedLevel", UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+
+        // Determine best key for this level
+        string bestKey = SceneManager.GetActiveScene().name.Contains("Easy") ? "BestScore_Easy" :
+                         SceneManager.GetActiveScene().name.Contains("Medium") ? "BestScore_Medium" :
+                         SceneManager.GetActiveScene().name.Contains("Hard") ? "BestScore_Hard" :
+                         "BestScore_Unknown";
+
+        // Update best score if necessary
+        int previousBest = PlayerPrefs.GetInt(bestKey, 0);
+        if (totalScore > previousBest)
+            PlayerPrefs.SetInt(bestKey, totalScore);
+
+        PlayerPrefs.Save(); // Make sure changes are saved
+
+        // Load win/lose scene
+        if (totalScore >= 70)
+            SceneManager.LoadScene("WinScene");
         else
-            Debug.Log("😢 YOU LOSE (Easy Mode)!");
+            SceneManager.LoadScene("LoseScene");
     }
+
+
+
+    public bool IsGameOver()
+    {
+        return gameOver;
+    }
+
 }
