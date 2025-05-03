@@ -21,8 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/DateHarvest/DateHarvest.unity
     guid: fee57da0cc3de3c4e88dcc6205603f21
   - enabled: 1
-    path: Assets/Scenes/Alsouq/DifficultySelectionAlsouq.unity
-    guid: aabc706a8e0118a4084e076228169677
+    path: Assets/Scenes/DateFarm/FailSceneDF.unity
+    guid: 9f93f6453819a6842a865ea7646aedb1
+  - enabled: 1
+    path: Assets/Scenes/DateFarm/WinSceneDF.unity
+    guid: 80f2a3c625e5f64409c85cd92e5398d3
   - enabled: 1
     path: Assets/Scenes/Alsouq/easy level/Memorization_easy.unity
     guid: 0d22a1d13bbc9c74587a71f2bb249376
@@ -30,22 +33,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Alsouq/easy level/GameScene_easy.unity
     guid: 55f24232d006a3445906244f8ffe6bfc
   - enabled: 1
-    path: Assets/Scenes/Alsouq/medium level/Memorization_medium.unity
-    guid: 3887a5949bd7493439c18a7778c46d85
+    path: Assets/Scenes/Alsouq/Win & Lose/LoseScene.unity
+    guid: 1a7b1397f962ee346a6e0619e2829423
   - enabled: 1
-    path: Assets/Scenes/Alsouq/medium level/GameScene_medium.unity
-    guid: f5f31bd80661002479960330398868e6
+    path: Assets/Scenes/Alsouq/Win & Lose/WinScene.unity
+    guid: 344ce9cfcb16c6540949929980cd06a9
   - enabled: 1
     path: Assets/Scenes/Alsouq/hard level/Memorization_Hard.unity
     guid: 243d0f9ecbe266046b41a622f03abd4f
   - enabled: 1
     path: Assets/Scenes/Alsouq/hard level/GameScene_hard.unity
     guid: 64bb550176d97f84bb47c95dab6dcba8
-  - enabled: 1
-    path: Assets/Scenes/Alsouq/Win & Lose/WinScene.unity
-    guid: 344ce9cfcb16c6540949929980cd06a9
-  - enabled: 1
-    path: Assets/Scenes/Alsouq/Win & Lose/LoseScene.unity
-    guid: 1a7b1397f962ee346a6e0619e2829423
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

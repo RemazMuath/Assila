@@ -6,6 +6,7 @@ using ArabicSupport;
 using UnityEngine.SceneManagement;
 
 
+
 public class MainGameplayScript : MonoBehaviour
 {
     public GameObject background;
@@ -208,4 +209,3 @@ public class MainGameplayScript : MonoBehaviour
 
 
 }
-
