@@ -170,29 +170,37 @@ public class GameScene_Easy : MonoBehaviour // 🆕 CHANGE class name
         Debug.Log("Game Over!");
         gameOver = true;
 
-        // Save last score and level
+        // Save current run
         PlayerPrefs.SetInt("LastScore", totalScore);
-        PlayerPrefs.SetString("LastPlayedLevel", UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        string sceneName = SceneManager.GetActiveScene().name.ToLower(); // 👈 normalize to lowercase
+        PlayerPrefs.SetString("LastPlayedLevel", sceneName);
 
-        // Determine best key for this level
-        string bestKey = SceneManager.GetActiveScene().name.Contains("Easy") ? "BestScore_Easy" :
-                         SceneManager.GetActiveScene().name.Contains("Medium") ? "BestScore_Medium" :
-                         SceneManager.GetActiveScene().name.Contains("Hard") ? "BestScore_Hard" :
+        // Determine best score key (case-insensitive check)
+        string bestKey = sceneName.Contains("easy") ? "BestScore_Easy" :
+                         sceneName.Contains("medium") ? "BestScore_Medium" :
+                         sceneName.Contains("hard") ? "BestScore_Hard" :
                          "BestScore_Unknown";
 
-        // Update best score if necessary
         int previousBest = PlayerPrefs.GetInt(bestKey, 0);
         if (totalScore > previousBest)
+        {
             PlayerPrefs.SetInt(bestKey, totalScore);
+            Debug.Log("✅ New best score saved: " + totalScore);
+        }
+        else
+        {
+            Debug.Log("ℹ️ Score was lower, best remains: " + previousBest);
+        }
 
-        PlayerPrefs.Save(); // Make sure changes are saved
+        PlayerPrefs.Save();
 
-        // Load win/lose scene
+        // Load win/lose screen
         if (totalScore >= 70)
             SceneManager.LoadScene("WinScene");
         else
             SceneManager.LoadScene("LoseScene");
     }
+
 
 
 

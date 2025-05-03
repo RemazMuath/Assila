@@ -1,0 +1,1543 @@
+fileFormatVersion: 2
+guid: 5f6a88462302f8a44880c84b02f05eaa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4677885995911120579
+    second: AlsouqobAltmmarLvl_0
+  - first:
+      213: 3191453337173410129
+    second: AlsouqobAltmmarLvl_1
+  - first:
+      213: -803401872490605917
+    second: AlsouqobAltmmarLvl_2
+  - first:
+      213: -7022808502952889077
+    second: AlsouqobAltmmarLvl_3
+  - first:
+      213: 7985272532987100183
+    second: AlsouqobAltmmarLvl_4
+  - first:
+      213: -6749858474735434466
+    second: AlsouqobAltmmarLvl_5
+  - first:
+      213: 7168514215422114286
+    second: AlsouqobAltmmarLvl_6
+  - first:
+      213: 264158999821795851
+    second: AlsouqobAltmmarLvl_7
+  - first:
+      213: -2523527463388716391
+    second: AlsouqobAltmmarLvl_8
+  - first:
+      213: -6598266678043253655
+    second: AlsouqobAltmmarLvl_9
+  - first:
+      213: 9077629553479620869
+    second: AlsouqobAltmmarLvl_10
+  - first:
+      213: 5693232312414483025
+    second: AlsouqobAltmmarLvl_11
+  - first:
+      213: -7608704021629866616
+    second: AlsouqobAltmmarLvl_12
+  - first:
+      213: -6828704514943766976
+    second: AlsouqobAltmmarLvl_13
+  - first:
+      213: 1077327142087968055
+    second: AlsouqobAltmmarLvl_14
+  - first:
+      213: 6112266774268311667
+    second: AlsouqobAltmmarLvl_15
+  - first:
+      213: 7506565353373342135
+    second: AlsouqobAltmmarLvl_16
+  - first:
+      213: 1586036692477113918
+    second: AlsouqobAltmmarLvl_17
+  - first:
+      213: 8627008670863605317
+    second: AlsouqobAltmmarLvl_18
+  - first:
+      213: 7369919741620520271
+    second: AlsouqobAltmmarLvl_19
+  - first:
+      213: -147140446452133993
+    second: AlsouqobAltmmarLvl_20
+  - first:
+      213: -44106170914293074
+    second: AlsouqobAltmmarLvl_21
+  - first:
+      213: 3902276693057077396
+    second: AlsouqobAltmmarLvl_22
+  - first:
+      213: -8633919649335910772
+    second: AlsouqobAltmmarLvl_23
+  - first:
+      213: -4181071165131107056
+    second: AlsouqobAltmmarLvl_24
+  - first:
+      213: 6022646980512542003
+    second: AlsouqobAltmmarLvl_25
+  - first:
+      213: -7816228421773626437
+    second: AlsouqobAltmmarLvl_26
+  - first:
+      213: -2229030896224757411
+    second: AlsouqobAltmmarLvl_27
+  - first:
+      213: -8401884203118417364
+    second: AlsouqobAltmmarLvl_28
+  - first:
+      213: 8436850858494685934
+    second: AlsouqobAltmmarLvl_29
+  - first:
+      213: 5587685475666159209
+    second: AlsouqobAltmmarLvl_30
+  - first:
+      213: -1460656852268722113
+    second: AlsouqobAltmmarLvl_31
+  - first:
+      213: -5286138465609354633
+    second: AlsouqobAltmmarLvl_32
+  - first:
+      213: -338180900318717336
+    second: AlsouqobAltmmarLvl_33
+  - first:
+      213: 7904950621055549707
+    second: AlsouqobAltmmarLvl_34
+  - first:
+      213: 9060897435909702784
+    second: AlsouqobAltmmarLvl_35
+  - first:
+      213: 2155027066776961211
+    second: AlsouqobAltmmarLvl_36
+  - first:
+      213: 1586925408593879669
+    second: AlsouqobAltmmarLvl_37
+  - first:
+      213: -6499660459850257481
+    second: AlsouqobAltmmarLvl_38
+  - first:
+      213: -1306832309081675331
+    second: AlsouqobAltmmarLvl_39
+  - first:
+      213: 3672801078400733990
+    second: AlsouqobAltmmarLvl_40
+  - first:
+      213: 5509241801002763046
+    second: AlsouqobAltmmarLvl_41
+  - first:
+      213: 7640887822844172202
+    second: AlsouqobAltmmarLvl_42
+  - first:
+      213: -1258370709011222584
+    second: AlsouqobAltmmarLvl_43
+  - first:
+      213: 719388555429398478
+    second: AlsouqobAltmmarLvl_44
+  - first:
+      213: 6861689822681664464
+    second: AlsouqobAltmmarLvl_45
+  - first:
+      213: 47284072856669499
+    second: AlsouqobAltmmarLvl_46
+  - first:
+      213: 7170400285478761680
+    second: AlsouqobAltmmarLvl_47
+  - first:
+      213: 6966739429121363311
+    second: AlsouqobAltmmarLvl_48
+  - first:
+      213: -3972578196959646182
+    second: AlsouqobAltmmarLvl_49
+  - first:
+      213: 6446966069168274438
+    second: AlsouqobAltmmarLvl_50
+  - first:
+      213: -5945616267485956530
+    second: AlsouqobAltmmarLvl_51
+  - first:
+      213: -972986113970684849
+    second: AlsouqobAltmmarLvl_52
+  - first:
+      213: -7036410281837808310
+    second: AlsouqobAltmmarLvl_53
+  - first:
+      213: 5666983852846056615
+    second: AlsouqobAltmmarLvl_54
+  - first:
+      213: 4003621314978059197
+    second: AlsouqobAltmmarLvl_55
+  - first:
+      213: 2802204535634522382
+    second: AlsouqobAltmmarLvl_56
+  - first:
+      213: 7948755230220766424
+    second: AlsouqobAltmmarLvl_57
+  - first:
+      213: 7633892074637190143
+    second: AlsouqobAltmmarLvl_58
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_0
+      rect:
+        serializedVersion: 2
+        x: 2442
+        y: 856
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c68e0e57803be040800000000000000
+      internalID: 4677885995911120579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_1
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 0
+        width: 1348
+        height: 1537
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151c47fa6e15a4c20800000000000000
+      internalID: 3191453337173410129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_2
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 730
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2505ae04eb9d4f0800000000000000
+      internalID: -803401872490605917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_3
+      rect:
+        serializedVersion: 2
+        x: 2084
+        y: 738
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0576efffd8f98e90800000000000000
+      internalID: -7022808502952889077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_4
+      rect:
+        serializedVersion: 2
+        x: 2332
+        y: 476
+        width: 233
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71c316b9f0361de60800000000000000
+      internalID: 7985272532987100183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_5
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 722
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e150c31ca7fa352a0800000000000000
+      internalID: -6749858474735434466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_6
+      rect:
+        serializedVersion: 2
+        x: 2054
+        y: 715
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee9b291d2bdab7360800000000000000
+      internalID: 7168514215422114286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_7
+      rect:
+        serializedVersion: 2
+        x: 2071
+        y: 726
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02c994f53b7aa300800000000000000
+      internalID: 264158999821795851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_8
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 698
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992e5cb6421aafcd0800000000000000
+      internalID: -2523527463388716391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_9
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 717
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9646fe95a6f3e64a0800000000000000
+      internalID: -6598266678043253655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_10
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 669
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5099db9cbf73afd70800000000000000
+      internalID: 9077629553479620869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_11
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 693
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152bd35cf9c620f40800000000000000
+      internalID: 5693232312414483025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_12
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 676
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d6aa54104786690800000000000000
+      internalID: -7608704021629866616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_13
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 582
+        width: 125
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04eaba67c619b31a0800000000000000
+      internalID: -6828704514943766976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_14
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 660
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7354a0be35f63fe00800000000000000
+      internalID: 1077327142087968055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_15
+      rect:
+        serializedVersion: 2
+        x: 1564
+        y: 185
+        width: 322
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3787fac3f3223d450800000000000000
+      internalID: 6112266774268311667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_16
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 470
+        width: 138
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9921bda6dac2860800000000000000
+      internalID: 7506565353373342135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_17
+      rect:
+        serializedVersion: 2
+        x: 1817
+        y: 554
+        width: 63
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3675d7f7fbb20610800000000000000
+      internalID: 1586036692477113918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_18
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 376
+        width: 242
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e3a05adaa49b770800000000000000
+      internalID: 8627008670863605317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_19
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 253
+        width: 151
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f450e6e15f6374660800000000000000
+      internalID: 7369919741620520271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_20
+      rect:
+        serializedVersion: 2
+        x: 2476
+        y: 277
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fc0252b8045fdf0800000000000000
+      internalID: -147140446452133993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_21
+      rect:
+        serializedVersion: 2
+        x: 2491
+        y: 280
+        width: 143
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa3046dbad436ff0800000000000000
+      internalID: -44106170914293074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_22
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 175
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49004f82afba72630800000000000000
+      internalID: 3902276693057077396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_23
+      rect:
+        serializedVersion: 2
+        x: 2426
+        y: 205
+        width: 41
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e511ac2d72e2880800000000000000
+      internalID: -8633919649335910772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_24
+      rect:
+        serializedVersion: 2
+        x: 2450
+        y: 208
+        width: 38
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0155bb57de9d9f5c0800000000000000
+      internalID: -4181071165131107056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_25
+      rect:
+        serializedVersion: 2
+        x: 2487
+        y: 218
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d6709f48db49350800000000000000
+      internalID: 6022646980512542003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_26
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 192
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3fedc99ad278390800000000000000
+      internalID: -7816228421773626437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_27
+      rect:
+        serializedVersion: 2
+        x: 2480
+        y: 178
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d591725b534e011e0800000000000000
+      internalID: -2229030896224757411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_28
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 178
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a292515d2866b80800000000000000
+      internalID: -8401884203118417364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_29
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 163
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2768bc727b51570800000000000000
+      internalID: 8436850858494685934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_30
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 168
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966e0b5d5527b8d40800000000000000
+      internalID: 5587685475666159209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_31
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 166
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3858cde454babbe0800000000000000
+      internalID: -1460656852268722113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_32
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 151
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77273db921dd3a6b0800000000000000
+      internalID: -5286138465609354633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_33
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 156
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a5eae434a8e4bf0800000000000000
+      internalID: -338180900318717336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_34
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 120
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b01050725b604bd60800000000000000
+      internalID: 7904950621055549707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_35
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 136
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08445a51636cebd70800000000000000
+      internalID: 9060897435909702784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_36
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 125
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0c79c03b138ed10800000000000000
+      internalID: 2155027066776961211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_37
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 132
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572a7405044e50610800000000000000
+      internalID: 1586925408593879669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_38
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 109
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bb29f99f319cc5a0800000000000000
+      internalID: -6499660459850257481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_39
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 115
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9ee2450f23ddde0800000000000000
+      internalID: -1306832309081675331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_40
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 101
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6235fb81f1968f230800000000000000
+      internalID: 3672801078400733990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_41
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 115
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623c0829a32c47c40800000000000000
+      internalID: 5509241801002763046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_42
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 56
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa71c31edf2e90a60800000000000000
+      internalID: 7640887822844172202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_43
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 85
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf21add18e598ee0800000000000000
+      internalID: -1258370709011222584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_44
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 68
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7c9d56418cbf900800000000000000
+      internalID: 719388555429398478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_45
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 93
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db8ad7f98e993f50800000000000000
+      internalID: 6861689822681664464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_46
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 18
+        width: 119
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3dc72e1d9cf7a000800000000000000
+      internalID: 47284072856669499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_47
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 21
+        width: 126
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d43259b111628360800000000000000
+      internalID: 7170400285478761680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_48
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 101
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d8c737994dea060800000000000000
+      internalID: 6966739429121363311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_49
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 0
+        width: 133
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e22cf6d219ed8c0800000000000000
+      internalID: -3972578196959646182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_50
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 1
+        width: 93
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60c75cf7b79387950800000000000000
+      internalID: 6446966069168274438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_51
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 0
+        width: 160
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4637b5818dec7da0800000000000000
+      internalID: -5945616267485956530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_52
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 15
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4cb361d8424f72f0800000000000000
+      internalID: -972986113970684849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_53
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 18
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a45b6211126a95e90800000000000000
+      internalID: -7036410281837808310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_54
+      rect:
+        serializedVersion: 2
+        x: 2484
+        y: 21
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a483c80acb25ae40800000000000000
+      internalID: 5666983852846056615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_55
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 8
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db31376bf58bf8730800000000000000
+      internalID: 4003621314978059197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_56
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 11
+        width: 26
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01fb7ead2e63e620800000000000000
+      internalID: 2802204535634522382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_57
+      rect:
+        serializedVersion: 2
+        x: 2444
+        y: 14
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc46df74c6af4e60800000000000000
+      internalID: 7948755230220766424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlsouqobAltmmarLvl_58
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff36b62556801f960800000000000000
+      internalID: 7633892074637190143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

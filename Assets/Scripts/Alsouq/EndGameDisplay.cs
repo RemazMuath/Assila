@@ -11,9 +11,9 @@ public class EndGameDisplay : MonoBehaviour
         int lastScore = PlayerPrefs.GetInt("LastScore", 0);
         string lastLevel = PlayerPrefs.GetString("LastPlayedLevel", "Unknown");
 
-        string bestKey = lastLevel.Contains("Easy") ? "BestScore_Easy" :
-                         lastLevel.Contains("Medium") ? "BestScore_Medium" :
-                         lastLevel.Contains("Hard") ? "BestScore_Hard" :
+        string bestKey = lastLevel.Contains("easy") ? "BestScore_Easy" :
+                         lastLevel.Contains("medium") ? "BestScore_Medium" :
+                         lastLevel.Contains("hard") ? "BestScore_Hard" :
                          "BestScore_Unknown";
 
         int bestScore = PlayerPrefs.GetInt(bestKey, 0);
