@@ -4,23 +4,39 @@ public class PlayerController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
+    private BoxCollider2D boxCollider;
     private bool isMovingRight = false;
+    private float currentYPosition; // Track position independently
 
     [Header("Movement Settings")]
     public float upwardMoveSpeed = 2f;
-    public float leftXPosition = -1.42f; // Exact left position (original value)
-    public float rightXPosition = 0.9f;  // Exact right position (original value)
+    public float leftXPosition = -1.42f;
+    public float rightXPosition = 0.9f;
+    public float leftColliderX = -7.2f;
+    public float rightColliderX = 7.2f;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        currentYPosition = transform.position.y;
+
+        // Completely prevent physics interference
+        rb.isKinematic = true;
     }
 
     void Update()
     {
-        // Auto upward movement
-        transform.Translate(Vector2.up * upwardMoveSpeed * Time.deltaTime);
+        // Calculate movement independently
+        currentYPosition += upwardMoveSpeed * Time.deltaTime;
+
+        // Apply position directly
+        transform.position = new Vector3(
+            transform.position.x,
+            currentYPosition,
+            transform.position.z
+        );
 
         // Keyboard input
         if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveLeft();
@@ -33,7 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             isMovingRight = false;
             spriteRenderer.flipX = false;
-            SnapToPosition(leftXPosition); // Force exact left position
+            SnapToPosition(leftXPosition, leftColliderX);
         }
     }
 
@@ -43,28 +59,25 @@ public class PlayerController : MonoBehaviour
         {
             isMovingRight = true;
             spriteRenderer.flipX = true;
-            SnapToPosition(rightXPosition); // Force exact right position
+            SnapToPosition(rightXPosition, rightColliderX);
         }
     }
 
-    private void SnapToPosition(float xPos)
+    private void SnapToPosition(float xPos, float colliderX)
     {
-        // Instant position update (bypass physics)
-        transform.position = new Vector3(xPos, transform.position.y, 0);
+        // Update positions without affecting Y movement
+        transform.position = new Vector3(
+            xPos,
+            currentYPosition, // Maintain consistent Y position
+            transform.position.z
+        );
+        boxCollider.offset = new Vector2(colliderX, boxCollider.offset.y);
     }
 
     public void ForceFlipFromObstacle()
     {
-        // Debug to verify it's being called
         Debug.Log("Obstacle triggered flip!");
-
-        if (isMovingRight)
-        {
-            MoveLeft(); // Uses the same position snapping
-        }
-        else
-        {
-            MoveRight(); // Uses the same position snapping
-        }
+        if (isMovingRight) MoveLeft();
+        else MoveRight();
     }
 }

@@ -56,7 +56,7 @@ public class PlatformManager : MonoBehaviour
         gameStarted = true;
 
         // Pre-spawn
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < poolSize; i++)
             SpawnPlatform();
     }
 
