@@ -8,16 +8,17 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 
+
 public class PlatformManager : MonoBehaviour
 {
     public GameObject[] platformPrefabs;
-    public int poolSize = 20;
+    public int poolSize = 100;
     public float spawnY = -2.5f;
     public float minSpacing = 5f;
     public float maxSpacing = 7f;
     public float heightChangeThreshold = 10f;
 
-   [SerializeField] private Transform player;
+    [SerializeField] private Transform player;
 
     private Queue<GameObject> platformPool = new Queue<GameObject>();
     private float nextSpawnX = 0f;
