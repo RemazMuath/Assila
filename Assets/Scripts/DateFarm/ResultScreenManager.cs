@@ -35,7 +35,6 @@ public class ResultScreenManager : MonoBehaviour
         }
     }
 
-
     string FormatTimeArabic(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60f);

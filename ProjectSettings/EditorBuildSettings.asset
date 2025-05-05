@@ -47,5 +47,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alsouq/hard level/GameScene_hard.unity
     guid: 64bb550176d97f84bb47c95dab6dcba8
+  - enabled: 1
+    path: Assets/Scenes/Alsouq/medium level/Memorization_medium.unity
+    guid: 3887a5949bd7493439c18a7778c46d85
+  - enabled: 1
+    path: Assets/Scenes/Alsouq/medium level/GameScene_medium.unity
+    guid: f5f31bd80661002479960330398868e6
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
