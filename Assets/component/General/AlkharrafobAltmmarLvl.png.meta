@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AlkharrafobAltmmarLvl_0: 2889882238893022257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

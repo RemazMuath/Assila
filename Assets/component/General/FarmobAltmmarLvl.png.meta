@@ -191,7 +191,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FarmobAltmmarLvl_0: 3353855669307644620
+      FarmobAltmmarLvl_1: -3736364307891058158
+      FarmobAltmmarLvl_2: -397576708893507324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

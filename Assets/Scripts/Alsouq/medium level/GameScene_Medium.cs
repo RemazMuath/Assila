@@ -114,6 +114,7 @@ public class GameScene_Medium : MonoBehaviour
             Debug.Log("Correct Answer!");
             correctAnswers++;
             totalScore += 10;
+            FindObjectOfType<ExcellentFeedback>().ShowExcellent();    // ✅ Call the excellent popup animation
         }
         else
         {

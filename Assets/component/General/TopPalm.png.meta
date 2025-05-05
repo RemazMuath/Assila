@@ -335,7 +335,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TopPalm_0: 2236638187192944885
+      TopPalm_1: -5238997164254508900
+      TopPalm_2: -2854784679395043506
+      TopPalm_3: -6604797275679194642
+      TopPalm_4: 894439376451492911
+      TopPalm_5: -7216057508696866106
+      TopPalm_6: 8277527277391045960
+      TopPalm_7: 1496126416823367399
+      TopPalm_8: -4966763760599519903
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
