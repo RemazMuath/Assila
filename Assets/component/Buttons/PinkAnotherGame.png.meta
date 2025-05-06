@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PinkAnotherGame_0: 699182721572452202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

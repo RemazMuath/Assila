@@ -1,8 +1,9 @@
-﻿// Merged version of GameManager, CameraFollow, CameraShaker, Difficulty Logic, and Win Conditions
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
 
 public enum DifficultyLevel { Easy, Medium, Hard }
 
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject palmSegmentPrefab;
     public float segmentSpacing = 8f;
     public int visibleSegmentsCount = 6;
-    public int maxPalmSegments = 30; // NEW: limit to palm segment generation
+    public int maxPalmSegments = 30;
 
     [Header("Obstacle Settings")]
     public float minSpawnInterval = 1.5f;
@@ -24,16 +25,13 @@ public class GameManager : MonoBehaviour
     public float spawnHeightOffset = 10f;
     public int maxActiveObstacles = 5;
     public float[] fixedXPositions = new float[] { -3f, 0f, 3f };
-    public float obstacleStopBuffer = 5f; // NEW: how far below the top obstacles should stop
+    public float obstacleStopBuffer = 5f;
 
     [Header("Gameplay")]
     public float timeLeft = 60f;
     public float timePenalty = 5f;
     public Transform player;
-    public GameObject gameOverUI;
-    public GameObject winUI; // NEW: win panel
-    public GameObject topTreeSegment; // reference to static top segment
-    public int score = 0;
+    public GameObject topTreeSegment;
 
     [Header("Camera Settings")]
     public Transform cameraTarget;
@@ -41,6 +39,13 @@ public class GameManager : MonoBehaviour
     public float cameraMinY = 0f;
     public float cameraShakeDuration = 0.2f;
     public float cameraShakeMagnitude = 0.2f;
+
+    [Header("UI")]
+    public TMP_Text timerText;
+    public Image countImage3;
+    public Image countImage2;
+    public Image countImage1;
+    public Image countImage_GO;
 
     private Queue<GameObject> activeSegments = new Queue<GameObject>();
     private List<GameObject> activeObstacles = new List<GameObject>();
@@ -51,6 +56,7 @@ public class GameManager : MonoBehaviour
     private Vector3 originalCameraPos;
     private bool shaking = false;
     private int totalSegmentsSpawned = 0;
+    private bool gameStarted = false;
 
     void Awake()
     {
@@ -66,42 +72,66 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "DifficultySelection") return;
+
         nextSpawnY = spawnPoint.position.y;
         nextObstacleSpawnY = player.position.y + minSpawnInterval;
         InitializeSegments();
         Time.timeScale = 1f;
-        if (gameOverUI != null) gameOverUI.SetActive(false);
-        if (winUI != null) winUI.SetActive(false);
+
+        if (cameraTarget == null && player != null)
+            cameraTarget = player;
 
         if (player != null)
         {
-            var controller = player.GetComponent<PlayerController>();
-            if (controller != null)
-            {
-                switch (SelectedDifficulty)
-                {
-                    case DifficultyLevel.Easy:
-                        controller.upwardMoveSpeed = 2f;
-                        break;
-                    case DifficultyLevel.Medium:
-                        controller.upwardMoveSpeed = 3.5f;
-                        break;
-                    case DifficultyLevel.Hard:
-                        controller.upwardMoveSpeed = 5f;
-                        break;
-                }
-            }
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            PlayerController pc = player.GetComponent<PlayerController>();
+            if (rb != null)
+                rb.bodyType = RigidbodyType2D.Static;
         }
 
-        if (cameraTarget == null && player != null)
+        StartCoroutine(ImageCountdown());
+    }
+
+    IEnumerator ImageCountdown()
+    {
+
+        if (countImage3 != null) countImage3.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        if (countImage3 != null) countImage3.gameObject.SetActive(false);
+
+        if (countImage2 != null) countImage2.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        if (countImage2 != null) countImage2.gameObject.SetActive(false);
+
+        if (countImage1 != null) countImage1.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        if (countImage1 != null) countImage1.gameObject.SetActive(false);
+
+        if (countImage_GO != null) countImage_GO.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        if (countImage_GO != null) countImage_GO.gameObject.SetActive(false);
+
+        if (player != null)
         {
-            cameraTarget = player;
+            var pc = player.GetComponent<PlayerController>();
+            if (pc != null) pc.allowControl = true;
+
+            var rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.bodyType = RigidbodyType2D.Dynamic;
         }
+
+
+
+        gameStarted = true;
     }
 
     void Update()
     {
-        if (gameOver || playerWon) return;
+        if (SceneManager.GetActiveScene().name == "DifficultySelection") return;
+        Debug.Log($"[GameManager] player: {player}, cameraTarget: {cameraTarget}, spawnPoint: {spawnPoint}");
+
+        if (gameOver || playerWon || !gameStarted) return;
 
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0f)
@@ -113,11 +143,33 @@ public class GameManager : MonoBehaviour
         ManageSegments();
         ManageObstacles();
         UpdateCamera();
+        UpdateTimerUI();
 
         if (topTreeSegment != null && player.position.y >= topTreeSegment.transform.position.y)
         {
             Win();
         }
+    }
+
+    void UpdateTimerUI()
+    {
+        if (timerText != null)
+        {
+            int time = Mathf.CeilToInt(Mathf.Max(0, timeLeft));
+            timerText.text = ConvertToArabicDigits(time.ToString());
+        }
+    }
+
+    string ConvertToArabicDigits(string input)
+    {
+        string[] arabicDigits = { "٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩" };
+        string result = "";
+        foreach (char c in input)
+        {
+            if (char.IsDigit(c)) result += arabicDigits[c - '0'];
+            else result += c;
+        }
+        return result;
     }
 
     void ManageObstacles()
@@ -134,7 +186,6 @@ public class GameManager : MonoBehaviour
             if (Mathf.Abs(existingY - newY) < minVerticalDistance) return;
         }
 
-        // Prevent obstacle spawn if we're too close to the top
         if (topTreeSegment != null && newY >= topTreeSegment.transform.position.y - obstacleStopBuffer)
         {
             return;
@@ -208,16 +259,31 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         gameOver = true;
-        Time.timeScale = 0f;
-        if (gameOverUI != null) gameOverUI.SetActive(true);
+        Time.timeScale = 1f;
+
+        string difficulty = SelectedDifficulty.ToString();
+        PlayerPrefs.SetFloat("LastTime_" + difficulty, timeLeft);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("FailHarvest");
     }
 
-    void Win()
+    public void Win()
     {
         playerWon = true;
-        Time.timeScale = 0f;
-        if (winUI != null) winUI.SetActive(true);
-        Debug.Log("Player has reached the top! WIN!");
+        Time.timeScale = 1f;
+
+        string difficulty = SelectedDifficulty.ToString();
+        float bestTime = PlayerPrefs.GetFloat("BestTime_" + difficulty, 0f);
+        PlayerPrefs.SetFloat("LastTime_" + difficulty, timeLeft);
+
+        if (timeLeft > bestTime)
+        {
+            PlayerPrefs.SetFloat("BestTime_" + difficulty, timeLeft);
+        }
+
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("WinHarvest");
     }
 
     void UpdateCamera()
@@ -251,10 +317,5 @@ public class GameManager : MonoBehaviour
 
         Camera.main.transform.localPosition = originalCameraPos;
         shaking = false;
-    }
-
-    public void AddScore(int value)
-    {
-        score += value;
     }
 }
