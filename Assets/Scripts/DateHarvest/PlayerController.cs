@@ -24,6 +24,19 @@ public class PlayerController : MonoBehaviour
         currentYPosition = transform.position.y;
 
         rb.isKinematic = true;
+
+        switch (GameManager.SelectedDifficulty)
+        {
+            case DifficultyLevel.Easy:
+                upwardMoveSpeed = 7f;
+                break;
+            case DifficultyLevel.Medium:
+                upwardMoveSpeed = 9f;
+                break;
+            case DifficultyLevel.Hard:
+                upwardMoveSpeed = 12f;
+                break;
+        }
     }
 
     void Update()

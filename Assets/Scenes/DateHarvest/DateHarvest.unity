@@ -889,8 +889,8 @@ Camera:
   m_GameObject: {fileID: 1223824982}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.9764706, g: 0.90588236, b: 0.8862745, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1016,7 +1016,7 @@ Transform:
   m_GameObject: {fileID: 1355705720}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 624, y: 479, z: -6942.5195}
+  m_LocalPosition: {x: 621, y: 434, z: -6942.5195}
   m_LocalScale: {x: 26.088446, y: 25.795317, z: 29.31286}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1117,9 +1117,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 247896048}
     - target: {fileID: 2529388235052718710, guid: 22ff918ad7fc5794b8a8f93d844e7299, type: 3}
+      propertyPath: cameraSmoothSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529388235052718710, guid: 22ff918ad7fc5794b8a8f93d844e7299, type: 3}
       propertyPath: palmSegmentPrefab
       value: 
       objectReference: {fileID: 1937101255}
+    - target: {fileID: 2529388235052718710, guid: 22ff918ad7fc5794b8a8f93d844e7299, type: 3}
+      propertyPath: cameraShakeMagnitude
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4918433042504083774, guid: 22ff918ad7fc5794b8a8f93d844e7299, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1349,7 +1357,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -7.2, y: 1.74}
+  m_Offset: {x: -7.2, y: 0.6797116}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1359,7 +1367,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10.67, y: 9.54}
+  m_Size: {x: 10.67, y: 7.4194226}
   m_EdgeRadius: 0
 --- !u!212 &1757758319
 SpriteRenderer:
@@ -1424,8 +1432,8 @@ Transform:
   m_GameObject: {fileID: 1757758317}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.42, y: -0.91, z: 0}
-  m_LocalScale: {x: 0.38710847, y: 0.38710847, z: 0.38710847}
+  m_LocalPosition: {x: -1.21, y: -0.82, z: 0}
+  m_LocalScale: {x: 0.30875772, y: 0.30875772, z: 0.30875772}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1470,7 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowControl: 0
-  upwardMoveSpeed: 6.38
+  upwardMoveSpeed: 12.1
   leftXPosition: -1.42
   rightXPosition: 0.89
   leftColliderX: -7.2
@@ -1651,7 +1659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -124, y: 51}
+  m_AnchoredPosition: {x: -127.000015, y: 5.9999657}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2013492185
