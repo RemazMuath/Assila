@@ -9,7 +9,7 @@ public class EndSceneButtons : MonoBehaviour
         if (!string.IsNullOrEmpty(lastScene))
         {
             Debug.Log("🔁 Reloading level: " + lastScene);
-            SceneManager.LoadScene(lastScene);
+            SceneManager.LoadScene("DifficultySelectionAlsouq");
         }
         else
         {

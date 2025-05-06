@@ -7,7 +7,6 @@ public class DifficultySelectorDF : MonoBehaviour
     {
         PlayerPrefs.SetString("Difficulty", difficulty);
         Debug.Log("Difficulty set to: " + difficulty);
-
-        SceneManager.LoadScene("MainFarm"); // Replace with your actual gameplay scene name
+        SceneManager.LoadScene("MainFarm"); 
     }
 }

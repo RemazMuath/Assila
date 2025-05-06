@@ -7,17 +7,16 @@ using ArabicSupport;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-
 public class PlatformManager : MonoBehaviour
 {
     public GameObject[] platformPrefabs;
-    public int poolSize = 20;
+    public int poolSize = 100;
     public float spawnY = -2.5f;
     public float minSpacing = 5f;
     public float maxSpacing = 7f;
     public float heightChangeThreshold = 10f;
 
-   [SerializeField] private Transform player;
+    [SerializeField] private Transform player;
 
     private Queue<GameObject> platformPool = new Queue<GameObject>();
     private float nextSpawnX = 0f;
@@ -25,7 +24,6 @@ public class PlatformManager : MonoBehaviour
     private bool gameStarted = false;
     private MainGameplayScript game;
     private GameObject startBlockInstance;
-
 
     private float lastPlatformHeight;
     private float lastPlatformRightEdge;
@@ -55,7 +53,6 @@ public class PlatformManager : MonoBehaviour
     {
         gameStarted = true;
 
-        // Pre-spawn
         for (int i = 0; i < poolSize; i++)
             SpawnPlatform();
     }
@@ -79,7 +76,7 @@ public class PlatformManager : MonoBehaviour
         {
             return renderer.bounds.size.x / 2f;
         }
-        return 0f; // Safe fallback if no SpriteRenderer
+        return 0f;
     }
 
     void Update()
@@ -87,11 +84,8 @@ public class PlatformManager : MonoBehaviour
         if (!gameStarted || game == null) return;
 
         scrollSpeed = game.scrollSpeed;
-
-        // Handle StartBlock moving and destroying
         MoveStartBlock();
 
-        // Track if any platforms are active
         bool anyPlatformsActive = false;
 
         foreach (var platform in platformPool)
@@ -107,15 +101,12 @@ public class PlatformManager : MonoBehaviour
                 }
             }
         }
-
-        // Emergency spawn if no platforms are active (shouldn't happen with proper pooling)
         if (!anyPlatformsActive)
         {
             Debug.LogWarning("No active platforms - forcing spawn");
             SpawnPlatform();
         }
 
-        // Keep filling the space ahead of player with buffer
         float spawnBuffer = Mathf.Max(SpawnAheadDistance, Camera.main.orthographicSize * 2f);
         while (nextSpawnX < player.position.x + spawnBuffer)
         {
@@ -174,8 +165,6 @@ public class PlatformManager : MonoBehaviour
         Debug.LogWarning("Platform pool expanded dynamically.");
         return newPlatform;
     }
-
-
 
     float ChooseHeight()
     {

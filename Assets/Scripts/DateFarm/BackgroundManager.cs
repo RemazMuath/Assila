@@ -5,7 +5,6 @@ public class BackgroundManager : MonoBehaviour
 {
     public GameObject backgroundPrefab;
     public int tileCount = 5;
-
     private List<GameObject> tiles = new List<GameObject>();
     private float bgWidth;
     private MainGameplayScript gameManager;
@@ -20,13 +19,13 @@ public class BackgroundManager : MonoBehaviour
             return;
         }
 
-        // 🔧 Create a temp background just to calculate correct size
+        //Create a temp background just to calculate correct size
         GameObject tempBG = Instantiate(backgroundPrefab);
-        AutoFitToCamera(tempBG); // 🧠 Scale the temp to match screen size
+        AutoFitToCamera(tempBG); //Scale the temp to match screen size
         bgWidth = tempBG.GetComponent<SpriteRenderer>().bounds.size.x;
         Destroy(tempBG);
 
-        // 🧱 Spawn actual background tiles
+        //Spawn actual background tiles
         for (int i = 0; i < tileCount; i++)
         {
             Vector3 spawnPos = new Vector3(i * bgWidth, 0, 0);
@@ -56,7 +55,7 @@ public class BackgroundManager : MonoBehaviour
         }
     }
 
-    // 🧠 Fit any background sprite to camera view horizontally
+    //Fit any background sprite to camera view horizontally
     void AutoFitToCamera(GameObject tile)
     {
         SpriteRenderer sr = tile.GetComponent<SpriteRenderer>();

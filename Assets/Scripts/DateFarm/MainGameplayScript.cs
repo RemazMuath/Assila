@@ -5,7 +5,6 @@ using TMPro;
 using ArabicSupport;
 using UnityEngine.SceneManagement;
 
-
 public class MainGameplayScript : MonoBehaviour
 {
     public GameObject background;
@@ -37,12 +36,12 @@ public class MainGameplayScript : MonoBehaviour
         {
             Animator animator = player.GetComponent<Animator>();
             if (animator != null)
-                animator.Play("Idle"); // Assila stands still
+                animator.Play("Idle");
 
             player.SetActive(true);
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
             if (rb != null)
-                rb.bodyType = RigidbodyType2D.Static; // Freeze movement during countdown
+                rb.bodyType = RigidbodyType2D.Static;
         }
 
         StartCoroutine(ImageCountdown());
@@ -58,12 +57,12 @@ public class MainGameplayScript : MonoBehaviour
                 obstacleSpawnInterval = 2.0f;
                 break;
             case "Medium":
-                baseSpeed = 20f;
+                baseSpeed = 18f;
                 accelerationRate = 1.0f;
                 obstacleSpawnInterval = 1.8f;
                 break;
             case "Hard":
-                baseSpeed = 25f;
+                baseSpeed = 21f;
                 accelerationRate = 1.0f;
                 obstacleSpawnInterval = 1.2f;
                 break;
@@ -151,43 +150,6 @@ public class MainGameplayScript : MonoBehaviour
         int index = Random.Range(0, obstaclePrefabs.Length);
         Instantiate(obstaclePrefabs[index], obstacleSpawnPoint.position, Quaternion.identity);
     }
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Platform1"))
-    //    {
-    //        // Stop the timer when Assila hits a platform
-    //        FindAnyObjectByType<GameTimerDF>().StopTimer();
-
-    //        // Get the current time
-    //        float currentTime = FindAnyObjectByType<GameTimerDF>().GetCurrentTime();
-
-    //        // Save the current time as LastTime
-    //        PlayerPrefs.SetFloat("LastTime", currentTime);
-
-    //        // Get the best time
-    //        float bestTime = PlayerPrefs.GetFloat("BestTime", 0f);
-
-    //        if (currentTime > bestTime)
-    //        {
-    //            // It's a new record
-    //            PlayerPrefs.SetFloat("BestTime", currentTime);
-    //            PlayerPrefs.Save();
-
-    //            SceneManager.LoadScene("WinSceneDF"); // New record -> Win
-    //        }
-    //        else
-    //        {
-    //            PlayerPrefs.Save();
-    //            SceneManager.LoadScene("FailSceneDF"); // No new record -> Fail
-    //        }
-
-    //        // Stop the game
-    //        gameStarted = false;
-    //    }
-    //}
-
-
-
 
     void CheckWinCondition(float currentTime)
     {
@@ -204,8 +166,4 @@ public class MainGameplayScript : MonoBehaviour
             SceneManager.LoadScene("FailSceneDF");
         }
     }
-
-
-
 }
-

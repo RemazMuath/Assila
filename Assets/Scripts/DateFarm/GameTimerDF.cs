@@ -23,7 +23,7 @@ public class GameTimerDF : MonoBehaviour
         if (timer > bestTime)
         {
             bestTime = timer;
-            PlayerPrefs.SetFloat("BestTime", bestTime); // save it
+            PlayerPrefs.SetFloat("BestTime", bestTime); 
             PlayerPrefs.Save();
         }
     }
@@ -31,9 +31,8 @@ public class GameTimerDF : MonoBehaviour
     void Start()
     {
         timerText.text = "٠٠:٠٠";
-        bestTime = PlayerPrefs.GetFloat("BestTime", 0f); // Load previous best
+        bestTime = PlayerPrefs.GetFloat("BestTime", 0f); 
     }
-
 
     void Update()
     {
