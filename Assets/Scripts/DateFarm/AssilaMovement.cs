@@ -2,8 +2,6 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-
-
 public class AssilaMovement : MonoBehaviour
 {
     [Header("Jump Physics")]
@@ -39,7 +37,6 @@ public class AssilaMovement : MonoBehaviour
         rb.AddForce(Vector2.up * baseJumpForce, ForceMode2D.Impulse);
         jumpCount++;
     }
-
 
     private float GetNextPlatformDistance()
     {
@@ -98,14 +95,12 @@ public class AssilaMovement : MonoBehaviour
         StartCoroutine(LoadSceneDelayed("FailSceneDF"));
     }
 
-
     private IEnumerator LoadSceneDelayed(string sceneName)
     {
         yield return new WaitForSecondsRealtime(0.2f); // Give Unity time to finish saving
         Debug.Log("Loading scene: " + sceneName);
         SceneManager.LoadScene(sceneName);
     }
-
 }
 
 public static class ExtensionMethods
