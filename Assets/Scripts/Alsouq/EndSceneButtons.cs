@@ -21,6 +21,6 @@ public class EndSceneButtons : MonoBehaviour
     {
         // TODO: Replace with actual scene name for your level selection
         Debug.Log("🎮 Going to level selection...");
-        // SceneManager.LoadScene("LevelSelection");
+        SceneManager.LoadScene("Tammar");
     }
 }
