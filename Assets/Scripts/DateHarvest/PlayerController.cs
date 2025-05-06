@@ -6,9 +6,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
     private bool isMovingRight = false;
-    private float currentYPosition; // Track position independently
+    private float currentYPosition;
 
     [Header("Movement Settings")]
+    public bool allowControl = false; 
     public float upwardMoveSpeed = 2f;
     public float leftXPosition = -1.42f;
     public float rightXPosition = 0.9f;
@@ -22,26 +23,40 @@ public class PlayerController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         currentYPosition = transform.position.y;
 
-        // Completely prevent physics interference
         rb.isKinematic = true;
+
+        switch (GameManager.SelectedDifficulty)
+        {
+            case DifficultyLevel.Easy:
+                upwardMoveSpeed = 7f;
+                break;
+            case DifficultyLevel.Medium:
+                upwardMoveSpeed = 9f;
+                break;
+            case DifficultyLevel.Hard:
+                upwardMoveSpeed = 12f;
+                break;
+        }
     }
 
     void Update()
     {
-        // Calculate movement independently
+        if (!allowControl) return;
+
+        // Maintain a constant climb speed — not accelerating
         currentYPosition += upwardMoveSpeed * Time.deltaTime;
 
-        // Apply position directly
         transform.position = new Vector3(
             transform.position.x,
             currentYPosition,
             transform.position.z
         );
 
-        // Keyboard input
+        // Handle lane switching
         if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveLeft();
         if (Input.GetKeyDown(KeyCode.RightArrow)) MoveRight();
     }
+
 
     public void MoveLeft()
     {
@@ -65,10 +80,15 @@ public class PlayerController : MonoBehaviour
 
     private void SnapToPosition(float xPos, float colliderX)
     {
-        // Update positions without affecting Y movement
+        if (boxCollider == null)
+        {
+            Debug.LogError("BoxCollider2D not assigned!");
+            return;
+        }
+
         transform.position = new Vector3(
             xPos,
-            currentYPosition, // Maintain consistent Y position
+            currentYPosition,
             transform.position.z
         );
         boxCollider.offset = new Vector2(colliderX, boxCollider.offset.y);
