@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/DateHarvest/DateHarvest.unity
     guid: fee57da0cc3de3c4e88dcc6205603f21
   - enabled: 1
+    path: Assets/Scenes/DateHarvest/WinHarvest.unity
+    guid: ddb7e3ea52e7b524eb5345881fee0ea6
+  - enabled: 1
+    path: Assets/Scenes/DateHarvest/FailHarvest.unity
+    guid: 1dfbb06f399570240968e657fc5bfea1
+  - enabled: 1
     path: Assets/Scenes/DateFarm/FailSceneDF.unity
     guid: 9f93f6453819a6842a865ea7646aedb1
   - enabled: 1
