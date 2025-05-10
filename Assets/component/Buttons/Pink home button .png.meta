@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pink home button _0: 5443496100332502492
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
