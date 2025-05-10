@@ -108,20 +108,22 @@ public class GameScene_Hard : MonoBehaviour
             return;
 
         int clickedDateIndex = selectedIndices[slotIndex];
+        var feedback = FindObjectOfType<ExcellentFeedback>();
 
         if (clickedDateIndex == currentAskedIndex)
         {
             Debug.Log("Correct Answer!");
             correctAnswers++;
-            totalScore += 10; // ✅ +10 points for correct
-            FindObjectOfType<ExcellentFeedback>().ShowExcellent();    // ✅ Call the excellent popup animation
+            totalScore += 10;
+            feedback?.ShowExcellent(); // ✅ Show correct feedback
         }
         else
         {
             Debug.Log("Wrong Answer!");
-            totalScore -= 10; // ✅ -10 points for wrong
+            totalScore -= 10;
             if (totalScore < 0)
-                totalScore = 0; // Never below 0
+                totalScore = 0;
+            feedback?.ShowWrong();     // ✅ Show wrong feedback
         }
 
         canClick = false;
@@ -159,11 +161,14 @@ public class GameScene_Hard : MonoBehaviour
         {
             int minutes = Mathf.FloorToInt(countdownTime / 60f);
             int seconds = Mathf.FloorToInt(countdownTime % 60f);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            string timeFormatted = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = ToArabicNumerals(timeFormatted);
         }
 
         if (scoreText != null)
-            scoreText.text = totalScore.ToString();
+        {
+            scoreText.text = ToArabicNumerals(totalScore.ToString());
+        }
     }
 
     private void EndGame()
@@ -171,12 +176,10 @@ public class GameScene_Hard : MonoBehaviour
         Debug.Log("Game Over!");
         gameOver = true;
 
-        // Save current run
         PlayerPrefs.SetInt("LastScore", totalScore);
-        string sceneName = SceneManager.GetActiveScene().name.ToLower(); // 👈 normalize to lowercase
+        string sceneName = SceneManager.GetActiveScene().name.ToLower();
         PlayerPrefs.SetString("LastPlayedLevel", sceneName);
 
-        // Determine best score key (case-insensitive check)
         string bestKey = sceneName.Contains("easy") ? "BestScore_Easy" :
                          sceneName.Contains("medium") ? "BestScore_Medium" :
                          sceneName.Contains("hard") ? "BestScore_Hard" :
@@ -195,19 +198,32 @@ public class GameScene_Hard : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        // Load win/lose screen
         if (totalScore >= 70)
             SceneManager.LoadScene("WinScene");
         else
             SceneManager.LoadScene("LoseScene");
     }
 
-
-
-
     public bool IsGameOver()
     {
         return gameOver;
     }
 
+    // 🔤 Converts Western digits to Arabic numerals
+    private string ToArabicNumerals(string number)
+    {
+        char[] arabicDigits = { '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩' };
+        char[] result = new char[number.Length];
+
+        for (int i = 0; i < number.Length; i++)
+        {
+            char c = number[i];
+            if (char.IsDigit(c))
+                result[i] = arabicDigits[c - '0'];
+            else
+                result[i] = c;
+        }
+
+        return new string(result);
+    }
 }

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class EndGameDisplay : MonoBehaviour
@@ -18,11 +18,28 @@ public class EndGameDisplay : MonoBehaviour
 
         int bestScore = PlayerPrefs.GetInt(bestKey, 0);
 
-        // Show only if assigned in Inspector
         if (lastScoreText != null)
-            lastScoreText.text = lastScore.ToString();
+            lastScoreText.text = ToArabicNumerals(lastScore.ToString());
 
         if (bestScoreText != null)
-            bestScoreText.text = bestScore.ToString();
+            bestScoreText.text = ToArabicNumerals(bestScore.ToString());
+    }
+
+    // 🔤 Converts Western digits to Arabic numerals
+    private string ToArabicNumerals(string number)
+    {
+        char[] arabicDigits = { '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩' };
+        char[] result = new char[number.Length];
+
+        for (int i = 0; i < number.Length; i++)
+        {
+            char c = number[i];
+            if (char.IsDigit(c))
+                result[i] = arabicDigits[c - '0'];
+            else
+                result[i] = c;
+        }
+
+        return new string(result);
     }
 }

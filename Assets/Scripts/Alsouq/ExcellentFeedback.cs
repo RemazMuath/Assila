@@ -1,40 +1,54 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class ExcellentFeedback : MonoBehaviour
 {
+    [Header("Correct Answer")]
     public GameObject excellentImage;
+
+    [Header("Wrong Answer")]
+    public GameObject wrongImage;
+
+    [Header("Animation Settings")]
     public float scaleTime = 0.3f;
     public float displayTime = 1.5f;
     public Vector3 targetScale = Vector3.one;
 
     void Start()
     {
-        excellentImage.SetActive(false);
+        if (excellentImage != null) excellentImage.SetActive(false);
+        if (wrongImage != null) wrongImage.SetActive(false);
     }
 
     public void ShowExcellent()
     {
-        StartCoroutine(ShowAndScale());
+        if (excellentImage != null)
+            StartCoroutine(ShowAndScale(excellentImage));
     }
 
-    IEnumerator ShowAndScale()
+    public void ShowWrong()
     {
-        excellentImage.SetActive(true);
-        excellentImage.transform.localScale = Vector3.zero;
+        if (wrongImage != null)
+            StartCoroutine(ShowAndScale(wrongImage));
+    }
+
+    private IEnumerator ShowAndScale(GameObject feedbackObject)
+    {
+        feedbackObject.SetActive(true);
+        feedbackObject.transform.localScale = Vector3.zero;
 
         float elapsed = 0f;
         while (elapsed < scaleTime)
         {
-            excellentImage.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, elapsed / scaleTime);
+            feedbackObject.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, elapsed / scaleTime);
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        excellentImage.transform.localScale = targetScale;
+        feedbackObject.transform.localScale = targetScale;
 
         yield return new WaitForSeconds(displayTime);
 
-        excellentImage.SetActive(false);
+        feedbackObject.SetActive(false);
     }
 }

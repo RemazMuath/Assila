@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameScene_Medium : MonoBehaviour
 {
     [Header("Date Display")]
-    public List<Image> slots;             // ✅ Should have 6 slots in the Inspector
+    public List<Image> slots;
     public List<Sprite> dateSprites;
 
     [Header("Speech Bubble")]
@@ -31,9 +31,9 @@ public class GameScene_Medium : MonoBehaviour
     private int totalCustomers = 0;
     private float timeSinceCustomerAsked = 0f;
 
-    private float countdownTime = 60f; // 🕒 1 minute
+    private float countdownTime = 60f;
     private bool gameOver = false;
-    private bool canClick = false;     // 🔒 Control clicking
+    private bool canClick = false;
 
     void Start()
     {
@@ -108,13 +108,14 @@ public class GameScene_Medium : MonoBehaviour
             return;
 
         int clickedDateIndex = selectedIndices[slotIndex];
+        var feedback = FindObjectOfType<ExcellentFeedback>();
 
         if (clickedDateIndex == currentAskedIndex)
         {
             Debug.Log("Correct Answer!");
             correctAnswers++;
             totalScore += 10;
-            FindObjectOfType<ExcellentFeedback>().ShowExcellent();    // ✅ Call the excellent popup animation
+            feedback?.ShowExcellent(); // ✅ Correct answer feedback
         }
         else
         {
@@ -122,6 +123,7 @@ public class GameScene_Medium : MonoBehaviour
             totalScore -= 10;
             if (totalScore < 0)
                 totalScore = 0;
+            feedback?.ShowWrong(); // ✅ Wrong answer feedback
         }
 
         canClick = false;
@@ -159,11 +161,14 @@ public class GameScene_Medium : MonoBehaviour
         {
             int minutes = Mathf.FloorToInt(countdownTime / 60f);
             int seconds = Mathf.FloorToInt(countdownTime % 60f);
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            string formattedTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = ToArabicNumerals(formattedTime);
         }
 
         if (scoreText != null)
-            scoreText.text = totalScore.ToString();
+        {
+            scoreText.text = ToArabicNumerals(totalScore.ToString());
+        }
     }
 
     private void EndGame()
@@ -171,12 +176,10 @@ public class GameScene_Medium : MonoBehaviour
         Debug.Log("Game Over!");
         gameOver = true;
 
-        // Save current run
         PlayerPrefs.SetInt("LastScore", totalScore);
-        string sceneName = SceneManager.GetActiveScene().name.ToLower(); // 👈 normalize to lowercase
+        string sceneName = SceneManager.GetActiveScene().name.ToLower();
         PlayerPrefs.SetString("LastPlayedLevel", sceneName);
 
-        // Determine best score key (case-insensitive check)
         string bestKey = sceneName.Contains("easy") ? "BestScore_Easy" :
                          sceneName.Contains("medium") ? "BestScore_Medium" :
                          sceneName.Contains("hard") ? "BestScore_Hard" :
@@ -195,19 +198,32 @@ public class GameScene_Medium : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        // Load win/lose screen
         if (totalScore >= 70)
             SceneManager.LoadScene("WinScene");
         else
             SceneManager.LoadScene("LoseScene");
     }
 
-
-
-
     public bool IsGameOver()
     {
         return gameOver;
     }
 
+    // 🔤 Convert English digits to Arabic numerals
+    private string ToArabicNumerals(string number)
+    {
+        char[] arabicDigits = { '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩' };
+        char[] result = new char[number.Length];
+
+        for (int i = 0; i < number.Length; i++)
+        {
+            char c = number[i];
+            if (char.IsDigit(c))
+                result[i] = arabicDigits[c - '0'];
+            else
+                result[i] = c;
+        }
+
+        return new string(result);
+    }
 }

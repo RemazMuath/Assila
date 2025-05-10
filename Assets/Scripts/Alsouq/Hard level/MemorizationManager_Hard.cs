@@ -34,7 +34,7 @@ public class MemorizationManager_Hard : MonoBehaviour
 
         if (timerText != null)
         {
-            timerText.text =  Mathf.CeilToInt(countdown).ToString();
+            timerText.text = ToArabicNumerals(Mathf.CeilToInt(countdown).ToString());
         }
 
         if (countdown <= 0)
@@ -90,5 +90,23 @@ public class MemorizationManager_Hard : MonoBehaviour
     void GoToNextScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene_hard"); // Replace with your actual scene name
+    }
+
+    // 🔤 Converts Western digits to Arabic numerals
+    string ToArabicNumerals(string number)
+    {
+        char[] arabicDigits = { '٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩' };
+        char[] result = new char[number.Length];
+
+        for (int i = 0; i < number.Length; i++)
+        {
+            char c = number[i];
+            if (char.IsDigit(c))
+                result[i] = arabicDigits[c - '0'];
+            else
+                result[i] = c;
+        }
+
+        return new string(result);
     }
 }

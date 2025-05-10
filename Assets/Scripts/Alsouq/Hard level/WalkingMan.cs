@@ -5,7 +5,8 @@ public class WalkingMan : MonoBehaviour
 {
     public float bobAmplitude = 20f;
     public float bobFrequency = 2f;
-    public float travelTime = 2f;
+
+    public float travelTime = 1f; // ⏩ Faster movement (was 2f)
     public float spawnYPosition = -150f;
 
     private RectTransform rectTransform;
@@ -51,7 +52,6 @@ public class WalkingMan : MonoBehaviour
             askedNameObject.SetActive(false);
         }
 
-        // Detect level
         if (FindObjectOfType<GameScene_Easy>() != null)
         {
             manager = FindObjectOfType<GameScene_Easy>();
@@ -108,7 +108,7 @@ public class WalkingMan : MonoBehaviour
             {
                 walkingOut = false;
 
-                if (!IsGameOver()) // ✅ Prevent spawning after end
+                if (!IsGameOver())
                     SpawnNewCustomer();
 
                 Destroy(gameObject);
@@ -154,7 +154,7 @@ public class WalkingMan : MonoBehaviour
             (manager as GameScene_Hard).SpawnNewCustomer();
     }
 
-    private bool IsGameOver() // ✅ Add this check for smoother scene switching
+    private bool IsGameOver()
     {
         if (manager == null) return true;
 

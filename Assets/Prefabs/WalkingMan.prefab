@@ -89,7 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b249bcb4e48c95c42adca63f6760e21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  travelTime: 1.5
+  bobAmplitude: 20
+  bobFrequency: 2
+  travelTime: 1
+  spawnYPosition: -150
   standingSprite: {fileID: -9201241512177023075, guid: 12ffbe68dfca90141985c791204b52a3, type: 3}
   walkingSprite: {fileID: 3811568038910027406, guid: 324100183e807f04b87d54b337a385d4, type: 3}
   speechBubble: {fileID: 6786747130453727133}
